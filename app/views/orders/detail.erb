@@ -1,0 +1,517 @@
+<script type="text/javascript">//<![CDATA[
+$(function () {
+  $('li#navi-order ul:first li:last').after('<li id="navi-order-plg_pgmulpayutils_payment_status"><a href="http://demo.ec-cube.net/admin/order/plg_pgmulpayutils_payment_status.php"><span>決済状況管理</span></a></li>');
+});
+//]]></script>
+
+<body class="authority_0">
+
+<script type="text/javascript" src="/js/order.js"></script>
+<noscript>
+    <p>JavaScript を有効にしてご利用下さい.</p>
+</noscript>
+
+<div id="container col-lg-9">
+<a name="top"></a>
+
+<%= render 'shared/header' %>
+
+<h1><span class="title" style="font-size: 18px">受注管理＞受注登録</span></h1>
+
+<div id="contents" class="clearfix">
+
+<form name="form1" id="form1" method="post" action="?">
+<input type="hidden" name="transactionid" value="637b5d32cf01cb6605456db2c1d517b22d483156"><input type="hidden" name="mode" value="add"><input type="hidden" name="order_id" value=""><input type="hidden" name="edit_customer_id" value=""><input type="hidden" name="anchor_key" value=""><input type="hidden" id="add_product_id" name="add_product_id" value=""><input type="hidden" id="add_product_class_id" name="add_product_class_id" value=""><input type="hidden" id="edit_product_id" name="edit_product_id" value=""><input type="hidden" id="edit_product_class_id" name="edit_product_class_id" value=""><input type="hidden" id="no" name="no" value=""><input type="hidden" id="delete_no" name="delete_no" value=""><input type="hidden" name="search_order_id1" value=""><input type="hidden" name="search_order_id2" value=""><input type="hidden" name="search_order_status" value=""><input type="hidden" name="search_order_name" value=""><input type="hidden" name="search_order_kana" value=""><input type="hidden" name="search_order_sex" value=""><input type="hidden" name="search_age1" value=""><input type="hidden" name="search_age2" value=""><input type="hidden" name="search_order_email" value=""><input type="hidden" name="search_order_tel" value=""><input type="hidden" name="search_payment_id" value=""><input type="hidden" name="search_total1" value=""><input type="hidden" name="search_total2" value=""><input type="hidden" name="search_page_max" value=""><input type="hidden" name="search_sorderyear" value=""><input type="hidden" name="search_sordermonth" value=""><input type="hidden" name="search_sorderday" value=""><input type="hidden" name="search_eorderyear" value=""><input type="hidden" name="search_eordermonth" value=""><input type="hidden" name="search_eorderday" value=""><input type="hidden" name="search_supdateyear" value=""><input type="hidden" name="search_supdatemonth" value=""><input type="hidden" name="search_supdateday" value=""><input type="hidden" name="search_eupdateyear" value=""><input type="hidden" name="search_eupdatemonth" value=""><input type="hidden" name="search_eupdateday" value=""><input type="hidden" name="search_sbirthyear" value=""><input type="hidden" name="search_sbirthmonth" value=""><input type="hidden" name="search_sbirthday" value=""><input type="hidden" name="search_ebirthyear" value=""><input type="hidden" name="search_ebirthmonth" value=""><input type="hidden" name="search_ebirthday" value=""><input type="hidden" name="search_product_name" value=""><input type="hidden" name="search_pageno" value="">
+
+<div class="col-lg-9">
+<div id="order" class="contents-main">
+
+<!--▼注文者情報ここから-->
+<table class="form">
+    <tr>
+        <th>注文番号</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>受注日</th>
+        <td><input type="hidden" name="create_date" value=""></td>
+    </tr>
+    <tr>
+        <th>対応状況</th>
+        <td>
+            <span class="attention"></span>
+            <select name="status" style="">
+                <option value="">選択してください</option>
+                <option label="決済処理中" value="7">決済処理中</option>
+                <option label="新規受付" value="1">新規受付</option>
+                <option label="入金待ち" value="2">入金待ち</option>
+                <option label="入金済み" value="6">入金済み</option>
+                <option label="キャンセル" value="3">キャンセル</option>
+                <option label="取り寄せ中" value="4">取り寄せ中</option>
+                <option label="発送済み" value="5">発送済み</option>
+            </select><br><span class="attention">※ キャンセルに変更時には、在庫数を手動で戻してください。</span>
+        </td>
+    </tr>
+    <tr>
+        <th>入金日</th>
+        <td>未入金</td>
+    </tr>
+    <tr>
+        <th>発送日</th>
+        <td>未発送</td>
+    </tr>
+</table>
+<h2>注文者情報
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="address_input" onclick="fnOpenWindow('/admin/customer/search_customer.php','search','600','650'); return false;">会員検索</a>
+</h2>
+<table class="form">
+    <tr>
+        <th>会員ID</th>
+        <td>(非会員)</td>
+    </tr>
+    <tr>
+        <th>お名前</th>
+        <td>
+            <span class="attention"></span>
+            <input type="text" name="order_name01" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="order_name02" value="" maxlength="50" style="" size="15" class="box15">
+        </td>
+    </tr>
+    <tr>
+        <th>お名前(フリガナ)</th>
+        <td>
+            <span class="attention"></span>
+            <input type="text" name="order_kana01" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="order_kana02" value="" maxlength="50" style="" size="15" class="box15">
+        </td>
+    </tr>
+    <tr>
+        <th>メールアドレス</th>
+        <td>
+            <span class="attention"></span>
+            <input type="text" name="order_email" value="" maxlength="" style="" size="30" class="box30"></td>
+    </tr>
+    <tr>
+        <th>TEL</th>
+        <td>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <input type="text" name="order_tel01" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="order_tel02" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="order_tel03" value="" maxlength="6" style="" size="6" class="box6"></td>
+    </tr>
+    <tr>
+        <th>FAX</th>
+        <td>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <input type="text" name="order_fax01" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="order_fax02" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="order_fax03" value="" maxlength="6" style="" size="6" class="box6"></td>
+    </tr>
+    <tr>
+        <th>住所</th>
+        <td>
+            <span class="attention"></span>
+            〒
+            <input type="text" name="order_zip01" value="" maxlength="3" style="" size="6" class="box6">
+            -
+            <input type="text" name="order_zip02" value="" maxlength="4" style="" size="6" class="box6"><a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="address_input" onclick="fnCallAddress('/input_zip.php', 'order_zip01', 'order_zip02', 'order_pref', 'order_addr01'); return false;">住所入力</a><br><span class="attention"></span>
+            <select class="top" name="order_pref" style="">
+                <option value="" selected>都道府県を選択</option>
+                <option label="北海道" value="1">北海道</option>
+                <option label="青森県" value="2">青森県</option>
+                <option label="岩手県" value="3">岩手県</option>
+                <option label="宮城県" value="4">宮城県</option>
+                <option label="秋田県" value="5">秋田県</option>
+                <option label="山形県" value="6">山形県</option>
+                <option label="福島県" value="7">福島県</option>
+                <option label="茨城県" value="8">茨城県</option>
+                <option label="栃木県" value="9">栃木県</option>
+                <option label="群馬県" value="10">群馬県</option>
+                <option label="埼玉県" value="11">埼玉県</option>
+                <option label="千葉県" value="12">千葉県</option>
+                <option label="東京都" value="13">東京都</option>
+                <option label="神奈川県" value="14">神奈川県</option>
+                <option label="新潟県" value="15">新潟県</option>
+                <option label="富山県" value="16">富山県</option>
+                <option label="石川県" value="17">石川県</option>
+                <option label="福井県" value="18">福井県</option>
+                <option label="山梨県" value="19">山梨県</option>
+                <option label="長野県" value="20">長野県</option>
+                <option label="岐阜県" value="21">岐阜県</option>
+                <option label="静岡県" value="22">静岡県</option>
+                <option label="愛知県" value="23">愛知県</option>
+                <option label="三重県" value="24">三重県</option>
+                <option label="滋賀県" value="25">滋賀県</option>
+                <option label="京都府" value="26">京都府</option>
+                <option label="大阪府" value="27">大阪府</option>
+                <option label="兵庫県" value="28">兵庫県</option>
+                <option label="奈良県" value="29">奈良県</option>
+                <option label="和歌山県" value="30">和歌山県</option>
+                <option label="鳥取県" value="31">鳥取県</option>
+                <option label="島根県" value="32">島根県</option>
+                <option label="岡山県" value="33">岡山県</option>
+                <option label="広島県" value="34">広島県</option>
+                <option label="山口県" value="35">山口県</option>
+                <option label="徳島県" value="36">徳島県</option>
+                <option label="香川県" value="37">香川県</option>
+                <option label="愛媛県" value="38">愛媛県</option>
+                <option label="高知県" value="39">高知県</option>
+                <option label="福岡県" value="40">福岡県</option>
+                <option label="佐賀県" value="41">佐賀県</option>
+                <option label="長崎県" value="42">長崎県</option>
+                <option label="熊本県" value="43">熊本県</option>
+                <option label="大分県" value="44">大分県</option>
+                <option label="宮崎県" value="45">宮崎県</option>
+                <option label="鹿児島県" value="46">鹿児島県</option>
+                <option label="沖縄県" value="47">沖縄県</option>
+            </select><br><span class="attention"></span>
+            <input type="text" name="order_addr01" value="" size="60" class="box60 top" maxlength="200" style=""><br><span class="attention"></span>
+            <input type="text" name="order_addr02" value="" size="60" class="box60" maxlength="200" style=""></td>
+    </tr>
+    <tr>
+        <th>備考</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>現在ポイント</th>
+        <td>
+
+            pt
+        </td>
+    </tr>
+    <tr>
+        <th>端末種別</th>
+        <td></td>
+    </tr>
+</table>
+<!--▲お客様情報ここまで--><!--▼受注商品情報ここから--><a name="order_products"></a>
+
+<h2 id="order_products">
+    受注商品情報
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="recalculate" onclick="fnModeSubmit('recalculate','anchor_key','order_products');">計算結果の確認</a>
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="add_product" onclick="win03('/admin/order/product_select.php?order_id=', 'search', '615', '500'); return false;">商品の追加</a>
+</h2>
+
+
+<table class="list" id="order-edit-products">
+    <tr>
+        <th class="id">商品コード</th>
+        <th class="name">商品名/規格1/規格2</th>
+        <th class="price">単価</th>
+        <th class="qty">数量</th>
+        <th class="price">税込み価格</th>
+        <th class="price">小計</th>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">小計</th>
+        <td class="right">円</td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">値引き</th>
+        <td class="right">
+            <span class="attention"></span>
+            <input type="text" name="discount" value="0" maxlength="9" style="" size="5" class="box6">
+            円
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">送料</th>
+        <td class="right">
+            <span class="attention"></span>
+            <input type="text" name="deliv_fee" value="0" maxlength="9" style="" size="5" class="box6">
+            円
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">手数料</th>
+        <td class="right">
+            <span class="attention"></span>
+            <input type="text" name="charge" value="0" maxlength="9" style="" size="5" class="box6">
+            円
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">合計</th>
+        <td class="right">
+            <span class="attention"></span>
+            円
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">お支払い合計</th>
+        <td class="right">
+            <span class="attention"></span>
+
+            円
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">使用ポイント</th>
+        <td class="right">
+            <span class="attention"></span>
+            <input type="text" name="use_point" value="0" maxlength="9" style="" size="5" class="box6">
+            pt
+        </td>
+    </tr>
+    <tr>
+        <th colspan="5" class="column right">加算ポイント</th>
+        <td class="right">
+            0
+            pt
+        </td>
+    </tr>
+</table>
+<input type="hidden" name="shipping_quantity" value="1"><!--▼お届け先情報ここから--><a name="shipping"></a>
+
+<h2>お届け先情報
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnCopyFromOrderData();">お客様情報へお届けする</a>
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnAppendShipping();">お届け先を新規追加</a>
+    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnMultiple();">複数のお届け先を指定する</a>
+</h2>
+
+<input type="hidden" name="shipping_id[0]" value="0" id="shipping_id_0">
+<table class="form">
+    <tr>
+        <th>お名前</th>
+        <td>
+            <span class="attention"></span>
+            <input type="text" name="shipping_name01[0]" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="shipping_name02[0]" value="" maxlength="50" style="" size="15" class="box15">
+        </td>
+    </tr>
+    <tr>
+        <th>お名前(フリガナ)</th>
+        <td>
+            <span class="attention"></span>
+            <input type="text" name="shipping_kana01[0]" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="shipping_kana02[0]" value="" maxlength="50" style="" size="15" class="box15">
+        </td>
+    </tr>
+    <tr>
+        <th>TEL</th>
+        <td>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <input type="text" name="shipping_tel01[0]" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="shipping_tel02[0]" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="shipping_tel03[0]" value="" maxlength="6" style="" size="6" class="box6"></td>
+    </tr>
+    <tr>
+        <th>FAX</th>
+        <td>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <input type="text" name="shipping_fax01[0]" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="shipping_fax02[0]" value="" maxlength="6" style="" size="6" class="box6"> -
+            <input type="text" name="shipping_fax03[0]" value="" maxlength="6" style="" size="6" class="box6"></td>
+    </tr>
+    <tr>
+        <th>住所</th>
+        <td>
+            <span class="attention"></span>
+            〒
+            <input type="text" name="shipping_zip01[0]" value="" maxlength="3" style="" size="6" class="box6">
+            -
+            <input type="text" name="shipping_zip02[0]" value="" maxlength="4" style="" size="6" class="box6"><a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="address_input" onclick="fnCallAddress('/input_zip.php', 'shipping_zip01[0]', 'shipping_zip02[0]', 'shipping_pref[0]', 'shipping_addr01[0]'); return false;">住所入力</a><br><span class="attention"></span>
+            <select class="top" name="shipping_pref[0]" style="">
+                <option value="" selected>都道府県を選択</option>
+                <option label="北海道" value="1">北海道</option>
+                <option label="青森県" value="2">青森県</option>
+                <option label="岩手県" value="3">岩手県</option>
+                <option label="宮城県" value="4">宮城県</option>
+                <option label="秋田県" value="5">秋田県</option>
+                <option label="山形県" value="6">山形県</option>
+                <option label="福島県" value="7">福島県</option>
+                <option label="茨城県" value="8">茨城県</option>
+                <option label="栃木県" value="9">栃木県</option>
+                <option label="群馬県" value="10">群馬県</option>
+                <option label="埼玉県" value="11">埼玉県</option>
+                <option label="千葉県" value="12">千葉県</option>
+                <option label="東京都" value="13">東京都</option>
+                <option label="神奈川県" value="14">神奈川県</option>
+                <option label="新潟県" value="15">新潟県</option>
+                <option label="富山県" value="16">富山県</option>
+                <option label="石川県" value="17">石川県</option>
+                <option label="福井県" value="18">福井県</option>
+                <option label="山梨県" value="19">山梨県</option>
+                <option label="長野県" value="20">長野県</option>
+                <option label="岐阜県" value="21">岐阜県</option>
+                <option label="静岡県" value="22">静岡県</option>
+                <option label="愛知県" value="23">愛知県</option>
+                <option label="三重県" value="24">三重県</option>
+                <option label="滋賀県" value="25">滋賀県</option>
+                <option label="京都府" value="26">京都府</option>
+                <option label="大阪府" value="27">大阪府</option>
+                <option label="兵庫県" value="28">兵庫県</option>
+                <option label="奈良県" value="29">奈良県</option>
+                <option label="和歌山県" value="30">和歌山県</option>
+                <option label="鳥取県" value="31">鳥取県</option>
+                <option label="島根県" value="32">島根県</option>
+                <option label="岡山県" value="33">岡山県</option>
+                <option label="広島県" value="34">広島県</option>
+                <option label="山口県" value="35">山口県</option>
+                <option label="徳島県" value="36">徳島県</option>
+                <option label="香川県" value="37">香川県</option>
+                <option label="愛媛県" value="38">愛媛県</option>
+                <option label="高知県" value="39">高知県</option>
+                <option label="福岡県" value="40">福岡県</option>
+                <option label="佐賀県" value="41">佐賀県</option>
+                <option label="長崎県" value="42">長崎県</option>
+                <option label="熊本県" value="43">熊本県</option>
+                <option label="大分県" value="44">大分県</option>
+                <option label="宮崎県" value="45">宮崎県</option>
+                <option label="鹿児島県" value="46">鹿児島県</option>
+                <option label="沖縄県" value="47">沖縄県</option>
+            </select><br><span class="attention"></span>
+            <input type="text" name="shipping_addr01[0]" value="" size="60" class="box60 top" maxlength="200" style=""><br><span class="attention"></span>
+            <input type="text" name="shipping_addr02[0]" value="" size="60" class="box60" maxlength="200" style=""></td>
+    </tr>
+    <tr>
+        <th>お届け時間</th>
+        <td>
+            <span class="attention"></span>
+            <select name="time_id[0]" style="">
+                <option value="" selected>指定無し</option>
+            </select></td>
+    </tr>
+    <tr>
+        <th>お届け日</th>
+        <td>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <span class="attention"></span>
+            <select name="shipping_date_year[0]" style="">
+                <option label="2005" value="2005">2005</option>
+                <option label="2006" value="2006">2006</option>
+                <option label="2007" value="2007">2007</option>
+                <option label="2008" value="2008">2008</option>
+                <option label="2009" value="2009">2009</option>
+                <option label="2010" value="2010">2010</option>
+                <option label="2011" value="2011">2011</option>
+                <option label="2012" value="2012">2012</option>
+                <option label="2013" value="2013">2013</option>
+                <option label="2014" value="2014">2014</option>
+                <option label="----" value="" selected="selected">----</option>
+                <option label="2015" value="2015">2015</option>
+                <option label="2016" value="2016">2016</option>
+                <option label="2017" value="2017">2017</option>
+            </select>年
+            <select name="shipping_date_month[0]" style="">
+                <option label="--" value="" selected="selected">--</option>
+                <option label="1" value="1">1</option>
+                <option label="2" value="2">2</option>
+                <option label="3" value="3">3</option>
+                <option label="4" value="4">4</option>
+                <option label="5" value="5">5</option>
+                <option label="6" value="6">6</option>
+                <option label="7" value="7">7</option>
+                <option label="8" value="8">8</option>
+                <option label="9" value="9">9</option>
+                <option label="10" value="10">10</option>
+                <option label="11" value="11">11</option>
+                <option label="12" value="12">12</option>
+            </select>月
+            <select name="shipping_date_day[0]" style="">
+                <option label="--" value="" selected="selected">--</option>
+                <option label="1" value="1">1</option>
+                <option label="2" value="2">2</option>
+                <option label="3" value="3">3</option>
+                <option label="4" value="4">4</option>
+                <option label="5" value="5">5</option>
+                <option label="6" value="6">6</option>
+                <option label="7" value="7">7</option>
+                <option label="8" value="8">8</option>
+                <option label="9" value="9">9</option>
+                <option label="10" value="10">10</option>
+                <option label="11" value="11">11</option>
+                <option label="12" value="12">12</option>
+                <option label="13" value="13">13</option>
+                <option label="14" value="14">14</option>
+                <option label="15" value="15">15</option>
+                <option label="16" value="16">16</option>
+                <option label="17" value="17">17</option>
+                <option label="18" value="18">18</option>
+                <option label="19" value="19">19</option>
+                <option label="20" value="20">20</option>
+                <option label="21" value="21">21</option>
+                <option label="22" value="22">22</option>
+                <option label="23" value="23">23</option>
+                <option label="24" value="24">24</option>
+                <option label="25" value="25">25</option>
+                <option label="26" value="26">26</option>
+                <option label="27" value="27">27</option>
+                <option label="28" value="28">28</option>
+                <option label="29" value="29">29</option>
+                <option label="30" value="30">30</option>
+                <option label="31" value="31">31</option>
+            </select>日
+        </td>
+    </tr>
+</table>
+<!--▲お届け先情報ここまで--><a name="deliv"></a>
+<table class="form">
+    <tr>
+        <th>配送業者<br><span class="attention">(配送業者の変更に伴う送料の変更は手動にてお願いします。)</span></th>
+        <td>
+            <span class="attention"></span>
+            <select name="deliv_id" style="" onchange="fnModeSubmit('deliv','anchor_key','deliv');">
+                <option value="" selected>選択してください</option>
+                <option label="サンプル業者" value="1">サンプル業者</option>
+                <option label="配送無し(ダウンロード商品用)" value="2">配送無し(ダウンロード商品用)</option>
+            </select></td>
+    </tr>
+    <tr>
+        <th>お支払方法<br><span class="attention">(お支払方法の変更に伴う手数料の変更は手動にてお願いします。)</span></th>
+        <td>
+            <span class="attention"></span>
+            <select name="payment_id" style="" onchange="fnModeSubmit('payment','anchor_key','deliv');">
+                <option value="" selected>選択してください</option>
+                <option label="郵便振替" value="1">郵便振替</option>
+                <option label="現金書留" value="2">現金書留</option>
+                <option label="銀行振込" value="3">銀行振込</option>
+                <option label="代金引換" value="4">代金引換</option>
+            </select></td>
+    </tr>
+    <tr>
+        <th>メモ</th>
+        <td>
+            <span class="attention"></span>
+            <textarea name="note" maxlength="200" cols="80" rows="6" class="area80" style="">
+            </textarea></td>
+    </tr>
+</table>
+<!--▲受注商品情報ここまで-->
+<div class="btn-area">
+    <ul>
+        <li>
+            <a class="btn-action" href="http://demo.ec-cube.netjavascript:;" onclick="fnChangeAction('/admin/order/'); fnModeSubmit('search','',''); return false;"><span class="btn-prev">検索画面に戻る</span></a>
+        </li>
+        <li>
+            <a class="btn-action" href="http://demo.ec-cube.netjavascript:;" onclick="return fnFormConfirm(); return false;"><span class="btn-next">この内容で登録する</span></a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+<div id="multiple"></div>
+</form>
+</div>
+
+
+<div id="footer">
+    <div id="footer-contents">
+        <div id="copyright">Copyright © 2000-2014 LOCKON CO.,LTD. All Rights Reserved.</div>
+        <div id="topagetop">
+            <ul class="sites">
+                <li><a href="http://demo.ec-cube.net#top" class="btn-tool-format">PAGE TOP</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+<%= render 'shared/footer' %>

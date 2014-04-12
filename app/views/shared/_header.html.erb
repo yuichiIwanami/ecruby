@@ -1,0 +1,306 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/reset.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_contents.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_file_manager.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" type="text/css" media="all"/>
+<script type="text/javascript" src="http://demo.ec-cube.net/js/navi.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/js/win_op.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/js/site.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/user_data/packages/admin/js/admin.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/js/css.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/user_data/packages/admin/js/file_manager.js"></script>
+
+<title>EC-RUBY 管理機能</title>
+<link rel="shortcut icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>
+</head>
+<div id="header">
+    <div id="header-contents">
+        <div id="logo">
+            <a href="http://demo.ec-cube.net/admin/home.php"><img src="http://demo.ec-cube.net/user_data/packages/admin/img/header/logo.jpg" width="172" height="25" alt="EC-CUBE"></a>
+        </div>
+        <div id="site-check">
+            <p class="info"><span>ログイン : 管理者</span> 様 </p>
+            <ul>
+                <li>
+                    <a href="http://demo.ec-cube.nethttp://demo.ec-cube.net/" class="btn-tool-format" target="_blank"><span>SITE CHECK</span></a>
+                </li>
+                <li><a href="http://demo.ec-cube.net/admin/logout.php" class="btn-tool-format">LOGOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="navi-wrap">
+<ul id="navi" class="clearfix">
+<li id="navi-basis" class="">
+    <a href="http://demo.ec-cube.net/admin/basis/"><span class="level1">基本情報管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-basis-index"><a href="http://demo.ec-cube.net/admin/basis/"><span>SHOPマスター</span></a></li>
+        <li id="navi-basis-tradelaw">
+            <a href="http://demo.ec-cube.net/admin/basis/tradelaw.php"><span>特定商取引法</span></a></li>
+        <li id="navi-basis-delivery">
+            <a href="http://demo.ec-cube.net/admin/basis/delivery.php"><span>配送方法設定</span></a></li>
+        <li id="navi-basis-payment">
+            <a href="http://demo.ec-cube.net/admin/basis/payment.php"><span>支払方法設定</span></a></li>
+        <li id="navi-basis-point">
+            <a href="http://demo.ec-cube.net/admin/basis/point.php"><span>ポイント設定</span></a></li>
+        <li id="navi-basis-mail"><a href="http://demo.ec-cube.net/admin/basis/mail.php"><span>メール設定</span></a>
+        </li>
+        <li id="navi-basis-seo"><a href="http://demo.ec-cube.net/admin/basis/seo.php"><span>SEO管理</span></a>
+        </li>
+        <li id="navi-basis-kiyaku">
+            <a href="http://demo.ec-cube.net/admin/basis/kiyaku.php"><span>会員規約設定</span></a></li>
+        <li id="navi-basis-zip">
+            <a href="http://demo.ec-cube.net/admin/basis/zip_install.php"><span>郵便番号DB登録</span></a></li>
+        <li id="navi-basis-holiday">
+            <a href="http://demo.ec-cube.net/admin/basis/holiday.php"><span>定休日管理</span></a></li>
+    </ul>
+</li>
+<li id="navi-products" class="">
+    <a href="http://demo.ec-cube.net/admin/products/"><span>商品管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-products-index"><a href="http://demo.ec-cube.net/admin/products/"><span>商品マスター</span></a>
+        </li>
+        <li id="navi-products-product">
+            <a href="http://demo.ec-cube.net/admin/products/product.php"><span>商品登録</span></a></li>
+        <li id="navi-products-uploadcsv">
+            <a href="http://demo.ec-cube.net/admin/products/upload_csv.php"><span>商品登録CSV</span></a></li>
+        <li id="navi-products-class">
+            <a href="http://demo.ec-cube.net/admin/products/class.php"><span>規格管理</span></a></li>
+        <li id="navi-products-category">
+            <a href="http://demo.ec-cube.net/admin/products/category.php"><span>カテゴリ登録</span></a></li>
+        <li id="navi-products-upload-csv-category">
+            <a href="http://demo.ec-cube.net/admin/products/upload_csv_category.php"><span>カテゴリ登録CSV</span></a>
+        </li>
+        <li id="navi-products-maker">
+            <a href="http://demo.ec-cube.net/admin/products/maker.php"><span>メーカー登録</span></a></li>
+        <li id="navi-products-rank">
+            <a href="http://demo.ec-cube.net/admin/products/product_rank.php"><span>商品並び替え</span></a></li>
+        <li id="navi-products-review">
+            <a href="http://demo.ec-cube.net/admin/products/review.php"><span>レビュー管理</span></a></li>
+    </ul>
+</li>
+<li id="navi-customer" class="">
+    <a href="http://demo.ec-cube.net/admin/customer/"><span>会員管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-customer-index"><a href="http://demo.ec-cube.net/admin/customer/"><span>会員マスター</span></a>
+        </li>
+        <li id="navi-customer-customer">
+            <a href="http://demo.ec-cube.net/admin/customer/edit.php"><span>会員登録</span></a></li>
+    </ul>
+</li>
+<li id="navi-order" class="on">
+    <a href="http://demo.ec-cube.net/admin/order/"><span>受注管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-order-index" class=""><a href="http://demo.ec-cube.net/admin/order/"><span>受注管理</span></a>
+        </li>
+        <li id="navi-order-add" class="on">
+            <a href="http://demo.ec-cube.net/admin/order/edit.php?mode=add"><span>受注登録</span></a></li>
+        <li id="navi-order-status" class="">
+            <a href="http://demo.ec-cube.net/admin/order/status.php"><span>対応状況管理</span></a></li>
+    </ul>
+</li>
+<li id="navi-total" class="">
+    <a href="http://demo.ec-cube.net/admin/total/"><span>売上集計</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-total-term" class="">
+            <a href="http://demo.ec-cube.net/admin/total/?page=term"><span>期間別集計</span></a></li>
+        <li id="navi-total-products" class="">
+            <a href="http://demo.ec-cube.net/admin/total/?page=products"><span>商品別集計</span></a></li>
+        <li id="navi-total-age" class="">
+            <a href="http://demo.ec-cube.net/admin/total/?page=age"><span>年代別集計</span></a></li>
+        <li id="navi-total-job" class="">
+            <a href="http://demo.ec-cube.net/admin/total/?page=job"><span>職業別集計</span></a></li>
+        <li id="navi-total-member" class="">
+            <a href="http://demo.ec-cube.net/admin/total/?page=member"><span>会員別集計</span></a></li>
+    </ul>
+</li>
+<li id="navi-mail" class="">
+    <a href="http://demo.ec-cube.net/admin/mail/"><span>メルマガ管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-mail-index"><a href="http://demo.ec-cube.net/admin/mail/"><span>配信内容設定</span></a></li>
+        <li id="navi-mail-template">
+            <a href="http://demo.ec-cube.net/admin/mail/template.php"><span>テンプレート設定</span></a></li>
+        <li id="navi-mail-history">
+            <a href="http://demo.ec-cube.net/admin/mail/history.php"><span>配信履歴</span></a></li>
+    </ul>
+</li>
+<li id="navi-contents" class="">
+    <a href="http://demo.ec-cube.net/admin/contents/"><span>コンテンツ管理</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-contents-index"><a href="http://demo.ec-cube.net/admin/contents/"><span>新着情報管理</span></a>
+        </li>
+        <li id="navi-contents-recommend">
+            <a href="http://demo.ec-cube.net/admin/contents/recommend.php"><span>おすすめ商品管理</span></a></li>
+        <li id="navi-contents-file">
+            <a href="http://demo.ec-cube.net/admin/contents/file_manager.php"><span>ファイル管理</span></a></li>
+        <li id="navi-contents-csv">
+            <a href="http://demo.ec-cube.net/admin/contents/csv.php"><span>CSV出力項目設定</span></a>
+            <ul id="navi-csv-sub" class="level2">
+                <li id="navi-csv-product">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv.php?tpl_subno_csv=product"><span>商品管理</span></a>
+                </li>
+                <li id="navi-csv-customer">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv.php?tpl_subno_csv=customer"><span>会員管理</span></a>
+                </li>
+                <li id="navi-csv-order">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv.php?tpl_subno_csv=order"><span>受注管理</span></a>
+                </li>
+                <li id="navi-csv-category">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv.php?tpl_subno_csv=category"><span>カテゴリ</span></a>
+                </li>
+                <li id="navi-csv-review">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv.php?tpl_subno_csv=review"><span>レビュー</span></a>
+                </li>
+                <li id="navi-csv-sql">
+                    <a href="http://demo.ec-cube.net/admin/contents/csv_sql.php"><span>高度な設定</span></a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li id="navi-design" class="">
+    <a href="http://demo.ec-cube.net/admin/design/"><span>デザイン管理</span></a>
+
+
+    <ul class="level1">
+        <li class="on_level2">
+            <a href="http://demo.ec-cube.net/admin/design/?device_type_id=10"><span>PC</span></a>
+            <ul class="level2">
+                <li id="navi-design-layout-10">
+                    <a href="http://demo.ec-cube.net/admin/design/?device_type_id=10"><span>レイアウト設定</span></a>
+                </li>
+                <li id="navi-design-main-10">
+                    <a href="http://demo.ec-cube.net/admin/design/main_edit.php?device_type_id=10"><span>ページ詳細設定</span></a>
+                </li>
+                <li id="navi-design-bloc-10">
+                    <a href="http://demo.ec-cube.net/admin/design/bloc.php?device_type_id=10"><span>ブロック設定</span></a>
+                </li>
+                <li id="navi-design-header-10">
+                    <a href="http://demo.ec-cube.net/admin/design/header.php?device_type_id=10"><span>ヘッダー/フッター設定</span></a>
+                </li>
+                <li id="navi-design-css-10">
+                    <a href="http://demo.ec-cube.net/admin/design/css.php?device_type_id=10"><span>CSS設定</span></a>
+                </li>
+                <li id="navi-design-template-10">
+                    <a href="http://demo.ec-cube.net/admin/design/template.php?device_type_id=10"><span>テンプレート設定</span></a>
+                </li>
+                <li id="navi-design-add-10">
+                    <a href="http://demo.ec-cube.net/admin/design/up_down.php?device_type_id=10"><span>テンプレート追加</span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="on_level2">
+            <a href="http://demo.ec-cube.net/admin/design/?device_type_id=1"><span>モバイル</span></a>
+            <ul class="level2">
+                <li id="navi-design-layout-1">
+                    <a href="http://demo.ec-cube.net/admin/design/?device_type_id=1"><span>レイアウト設定</span></a>
+                </li>
+                <li id="navi-design-main-1">
+                    <a href="http://demo.ec-cube.net/admin/design/main_edit.php?device_type_id=1"><span>ページ詳細設定</span></a>
+                </li>
+                <li id="navi-design-bloc-1">
+                    <a href="http://demo.ec-cube.net/admin/design/bloc.php?device_type_id=1"><span>ブロック設定</span></a>
+                </li>
+                <li id="navi-design-header-1">
+                    <a href="http://demo.ec-cube.net/admin/design/header.php?device_type_id=1"><span>ヘッダー/フッター設定</span></a>
+                </li>
+                <li id="navi-design-css-1">
+                    <a href="http://demo.ec-cube.net/admin/design/css.php?device_type_id=1"><span>CSS設定</span></a>
+                </li>
+                <li id="navi-design-template-1">
+                    <a href="http://demo.ec-cube.net/admin/design/template.php?device_type_id=1"><span>テンプレート設定</span></a>
+                </li>
+                <li id="navi-design-add-1">
+                    <a href="http://demo.ec-cube.net/admin/design/up_down.php?device_type_id=1"><span>テンプレート追加</span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="on_level2">
+            <a href="http://demo.ec-cube.net/admin/design/?device_type_id=2"><span>スマートフォン</span></a>
+            <ul class="level2">
+                <li id="navi-design-layout-2">
+                    <a href="http://demo.ec-cube.net/admin/design/?device_type_id=2"><span>レイアウト設定</span></a>
+                </li>
+                <li id="navi-design-main-2">
+                    <a href="http://demo.ec-cube.net/admin/design/main_edit.php?device_type_id=2"><span>ページ詳細設定</span></a>
+                </li>
+                <li id="navi-design-bloc-2">
+                    <a href="http://demo.ec-cube.net/admin/design/bloc.php?device_type_id=2"><span>ブロック設定</span></a>
+                </li>
+                <li id="navi-design-header-2">
+                    <a href="http://demo.ec-cube.net/admin/design/header.php?device_type_id=2"><span>ヘッダー/フッター設定</span></a>
+                </li>
+                <li id="navi-design-css-2">
+                    <a href="http://demo.ec-cube.net/admin/design/css.php?device_type_id=2"><span>CSS設定</span></a>
+                </li>
+                <li id="navi-design-template-2">
+                    <a href="http://demo.ec-cube.net/admin/design/template.php?device_type_id=2"><span>テンプレート設定</span></a>
+                </li>
+                <li id="navi-design-add-2">
+                    <a href="http://demo.ec-cube.net/admin/design/up_down.php?device_type_id=2"><span>テンプレート追加</span></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li id="navi-system" class="">
+    <a href="http://demo.ec-cube.net/admin/system/"><span>システム設定</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-system-index"><a href="http://demo.ec-cube.net/admin/system/"><span>メンバー管理</span></a></li>
+        <li id="navi-system-bkup">
+            <a href="http://demo.ec-cube.net/admin/system/bkup.php"><span>バックアップ管理</span></a></li>
+        <li id="navi-system-parameter">
+            <a href="http://demo.ec-cube.net/admin/system/parameter.php"><span>パラメーター設定</span></a></li>
+        <li id="navi-system-masterdata">
+            <a href="http://demo.ec-cube.net/admin/system/masterdata.php"><span>マスターデータ管理</span></a></li>
+        <li id="navi-system-adminarea">
+            <a href="http://demo.ec-cube.net/admin/system/adminarea.php"><span>管理画面設定</span></a></li>
+        <li id="navi-system-system">
+            <a href="http://demo.ec-cube.net/admin/system/system.php"><span>システム情報</span></a></li>
+        <li id="navi-system-log">
+            <a href="http://demo.ec-cube.net/admin/system/log.php"><span>EC-CUBE ログ表示</span></a></li>
+        <li id="navi-system-editdb">
+            <a href="http://demo.ec-cube.net/admin/system/editdb.php"><span>高度なデータベース管理</span></a></li>
+    </ul>
+</li>
+<li id="navi-ownersstore" class="">
+    <a href="http://demo.ec-cube.net/admin/ownersstore/"><span>オーナーズストア</span></a>
+
+
+    <ul class="level1">
+        <li id="navi-ownersstore-index" class="">
+            <a href="http://demo.ec-cube.net/admin/ownersstore/"><span>プラグイン管理</span></a></li>
+        <li id="navi-ownersstore-module" class="">
+            <a href="http://demo.ec-cube.net/admin/ownersstore/module.php"><span>モジュール管理</span></a></li>
+        <li id="navi-ownersstore-settings" class="">
+            <a href="http://demo.ec-cube.net/admin/ownersstore/settings.php"><span>認証キー設定</span></a></li>
+        <li id="navi-ownersstore-log" class="">
+            <a href="http://demo.ec-cube.net/admin/ownersstore/log.php"><span>ログ管理</span></a></li>
+    </ul>
+</li>
+</ul>
+</div>
