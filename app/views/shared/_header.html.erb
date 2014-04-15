@@ -1,13 +1,20 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="content-script-type" content="text/javascript"/>
 <meta http-equiv="content-style-type" content="text/css"/>
 <meta name="robots" content="noindex,nofollow"/>
-<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/reset.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_contents.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_file_manager.css" type="text/css" media="all"/>
+
+<!--<link rel="stylesheet" href="/css/admin/reset.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="/css/admin/admin_contents.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="/css/admin/admin_file_manager.css" type="text/css" media="all"/>-->
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_contents.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://demo.ec-cube.net/user_data/packages/admin/css/admin_file_manager.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" type="text/css" media="all"/>
+<!--<link rel="stylesheet" href="/css/bootstrap/bootstrap-responsive.min.css" type="text/css" media="all"/>-->
+
 <script type="text/javascript" src="http://demo.ec-cube.net/js/navi.js"></script>
 <script type="text/javascript" src="http://demo.ec-cube.net/js/win_op.js"></script>
 <script type="text/javascript" src="http://demo.ec-cube.net/js/site.js"></script>
@@ -15,22 +22,27 @@
 <script type="text/javascript" src="http://demo.ec-cube.net/user_data/packages/admin/js/admin.js"></script>
 <script type="text/javascript" src="http://demo.ec-cube.net/js/css.js"></script>
 <script type="text/javascript" src="http://demo.ec-cube.net/user_data/packages/admin/js/file_manager.js"></script>
+<script type="text/javascript" src="http://demo.ec-cube.net/user_data/packages/admin/js/file_manager.js"></script>
+<!--<script type="text/javascript" src="/js/angularjs/angular.js"></script>-->
+<script type="text/javascript" src="/js/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="/js/angularjs/angular.min.js.map"></script>
 
 <title>EC-RUBY 管理機能</title>
-<link rel="shortcut icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>
-<link rel="icon" type="image/vnd.microsoft.icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>
+<!--<link rel="shortcut icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>-->
+<!--<link rel="icon" type="image/vnd.microsoft.icon" href="http://demo.ec-cube.net/user_data/packages/admin/img/common/favicon.ico"/>-->
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/images/images3.jpeg"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="/images/images3.jpeg"/>
 </head>
+
 <div id="header">
     <div id="header-contents">
         <div id="logo">
-            <a href="http://demo.ec-cube.net/admin/home.php"><img src="http://demo.ec-cube.net/user_data/packages/admin/img/header/logo.jpg" width="172" height="25" alt="EC-CUBE"></a>
+            <a href="/"><img src="http://demo.ec-cube.net/user_data/packages/admin/img/header/logo.jpg" width="172" height="25" alt="EC-CUBE"></a>
         </div>
         <div id="site-check">
             <p class="info"><span>ログイン : 管理者</span> 様 </p>
             <ul>
-                <li>
-                    <a href="http://demo.ec-cube.nethttp://demo.ec-cube.net/" class="btn-tool-format" target="_blank"><span>SITE CHECK</span></a>
-                </li>
+               <!-- <li><a href="http://demo.ec-cube.nethttp://demo.ec-cube.net/" class="btn-tool-format" target="_blank"><span>SITE CHECK</span></a></li>-->
                 <li><a href="http://demo.ec-cube.net/admin/logout.php" class="btn-tool-format">LOGOUT</a></li>
             </ul>
         </div>
@@ -42,8 +54,6 @@
 <ul id="navi" class="clearfix">
 <li id="navi-basis" class="">
     <a href="http://demo.ec-cube.net/admin/basis/"><span class="level1">基本情報管理</span></a>
-
-
     <ul class="level1">
         <li id="navi-basis-index"><a href="http://demo.ec-cube.net/admin/basis/"><span>SHOPマスター</span></a></li>
         <li id="navi-basis-tradelaw">

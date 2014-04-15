@@ -1,20 +1,23 @@
+<!DOCTYPE html>
+<html>
+<%= render 'shared/header' %>
 <script type="text/javascript">//<![CDATA[
 $(function () {
   $('li#navi-order ul:first li:last').after('<li id="navi-order-plg_pgmulpayutils_payment_status"><a href="http://demo.ec-cube.net/admin/order/plg_pgmulpayutils_payment_status.php"><span>決済状況管理</span></a></li>');
 });
-//]]></script>
-
-<body class="authority_0">
-
+//]]></script >
+<!--<script type="text/javascript" src="/js/angularjs/ng-table.min.js"></script>-->
+<script type="text/javascript" src="/js/angularjs/controllers/orders_detail.js"></script>
 <script type="text/javascript" src="/js/order.js"></script>
+
+<body class="authority_0" ng-app="ordersDetail" ng-controller="ordersDetailCtrl">
+
 <noscript>
     <p>JavaScript を有効にしてご利用下さい.</p>
 </noscript>
 
 <div id="container col-lg-9">
 <a name="top"></a>
-
-<%= render 'shared/header' %>
 
 <h1><span class="title" style="font-size: 18px">受注管理＞受注登録</span></h1>
 
@@ -61,9 +64,9 @@ $(function () {
         <td>未発送</td>
     </tr>
 </table>
-<h2>注文者情報
+<h2 style="font-size: 18px">注文者情報</h2>
     <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="address_input" onclick="fnOpenWindow('/admin/customer/search_customer.php','search','600','650'); return false;">会員検索</a>
-</h2>
+    <br><br>
 <table class="form">
     <tr>
         <th>会員ID</th>
@@ -176,10 +179,7 @@ $(function () {
     </tr>
     <tr>
         <th>現在ポイント</th>
-        <td>
-
-            pt
-        </td>
+        <td>pt</td>
     </tr>
     <tr>
         <th>端末種別</th>
@@ -188,22 +188,35 @@ $(function () {
 </table>
 <!--▲お客様情報ここまで--><!--▼受注商品情報ここから--><a name="order_products"></a>
 
-<h2 id="order_products">
-    受注商品情報
-    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="recalculate" onclick="fnModeSubmit('recalculate','anchor_key','order_products');">計算結果の確認</a>
-    <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" name="add_product" onclick="win03('/admin/order/product_select.php?order_id=', 'search', '615', '500'); return false;">商品の追加</a>
-</h2>
+<h2 id="order_products" style="font-size: 18px">受注商品情報</h2>
+    <a class="btn-normal" href="javascript:;" name="recalculate"
+       onclick="fnModeSubmit('recalculate','anchor_key','order_products');">計算結果の確認</a>
+    <a class="btn-normal" href="javascript:;" name="add_product"
+       onclick="win03('/admin/orders/new', 'search', '615', '500'); return false;">商品の追加</a>
+<br><br>
 
 
 <table class="list" id="order-edit-products">
     <tr>
         <th class="id">商品コード</th>
-        <th class="name">商品名/規格1/規格2</th>
+        <th class="name">商品名</th>
         <th class="price">単価</th>
         <th class="qty">数量</th>
         <th class="price">税込み価格</th>
         <th class="price">小計</th>
     </tr>
+    <form name="form1">
+    <tr ng-repeat="product in products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <!--<td><input type="text" style="float: right;" value="{{product.price}}" ng-model="price"></td>-->
+        <td><input type="text" style="float: right;" ng-model="test"></td>
+        <td><input type="text" value="{{product.quantity}}"></td>
+        <td>{{product.tax}}</td>
+        <td>{{test}}</td>
+        <!--<td ng-bind="{{(product.price+product.tax)*product.quantity}}"></td>-->
+    </tr>
+    </form>
     <tr>
         <th colspan="5" class="column right">小計</th>
         <td class="right">円</td>
@@ -212,64 +225,52 @@ $(function () {
         <th colspan="5" class="column right">値引き</th>
         <td class="right">
             <span class="attention"></span>
-            <input type="text" name="discount" value="0" maxlength="9" style="" size="5" class="box6">
-            円
+            <input type="text" name="discount" value="0" maxlength="9" style="" size="5" class="box6">円
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">送料</th>
         <td class="right">
             <span class="attention"></span>
-            <input type="text" name="deliv_fee" value="0" maxlength="9" style="" size="5" class="box6">
-            円
+            <input type="text" name="deliv_fee" value="0" maxlength="9" style="" size="5" class="box6">円
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">手数料</th>
         <td class="right">
             <span class="attention"></span>
-            <input type="text" name="charge" value="0" maxlength="9" style="" size="5" class="box6">
-            円
+            <input type="text" name="charge" value="0" maxlength="9" style="" size="5" class="box6">円
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">合計</th>
-        <td class="right">
-            <span class="attention"></span>
-            円
-        </td>
+        <td class="right"><span class="attention"></span>円</td>
     </tr>
     <tr>
         <th colspan="5" class="column right">お支払い合計</th>
         <td class="right">
-            <span class="attention"></span>
-
-            円
+            <span class="attention"></span>円
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">使用ポイント</th>
         <td class="right">
             <span class="attention"></span>
-            <input type="text" name="use_point" value="0" maxlength="9" style="" size="5" class="box6">
-            pt
+            <input type="text" name="use_point" value="0" maxlength="9" style="" size="5" class="box6">pt
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">加算ポイント</th>
-        <td class="right">
-            0
-            pt
-        </td>
+        <td class="right">0pt</td>
     </tr>
 </table>
 <input type="hidden" name="shipping_quantity" value="1"><!--▼お届け先情報ここから--><a name="shipping"></a>
 
-<h2>お届け先情報
+<h2 style="font-size: 18px">お届け先情報</h2>
     <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnCopyFromOrderData();">お客様情報へお届けする</a>
     <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnAppendShipping();">お届け先を新規追加</a>
     <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnMultiple();">複数のお届け先を指定する</a>
-</h2>
+    <br><br>
 
 <input type="hidden" name="shipping_id[0]" value="0" id="shipping_id_0">
 <table class="form">
@@ -277,14 +278,16 @@ $(function () {
         <th>お名前</th>
         <td>
             <span class="attention"></span>
-            <input type="text" name="shipping_name01[0]" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="shipping_name02[0]" value="" maxlength="50" style="" size="15" class="box15">
+            <input type="text" name="shipping_name01[0]" value="" maxlength="50" style="" size="15" class="box15">
+            <input type="text" name="shipping_name02[0]" value="" maxlength="50" style="" size="15" class="box15">
         </td>
     </tr>
     <tr>
         <th>お名前(フリガナ)</th>
         <td>
             <span class="attention"></span>
-            <input type="text" name="shipping_kana01[0]" value="" maxlength="50" style="" size="15" class="box15"><input type="text" name="shipping_kana02[0]" value="" maxlength="50" style="" size="15" class="box15">
+            <input type="text" name="shipping_kana01[0]" value="" maxlength="50" style="" size="15" class="box15">
+            <input type="text" name="shipping_kana02[0]" value="" maxlength="50" style="" size="15" class="box15">
         </td>
     </tr>
     <tr>
@@ -499,19 +502,8 @@ $(function () {
 </form>
 </div>
 
-
-<div id="footer">
-    <div id="footer-contents">
-        <div id="copyright">Copyright © 2000-2014 LOCKON CO.,LTD. All Rights Reserved.</div>
-        <div id="topagetop">
-            <ul class="sites">
-                <li><a href="http://demo.ec-cube.net#top" class="btn-tool-format">PAGE TOP</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
+<%= render 'shared/footer' %>
 
 </div>
 </body>
-<%= render 'shared/footer' %>
+</html>
