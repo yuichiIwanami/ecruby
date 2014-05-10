@@ -8,7 +8,7 @@ $(function () {
 //]]></script >
 <!--<script type="text/javascript" src="/js/angularjs/ng-table.min.js"></script>-->
 <script type="text/javascript" src="/js/angularjs/controllers/orders_detail.js"></script>
-<script type="text/javascript" src="/js/order.js"></script>
+<!--<script type="text/javascript" src="/js/order.js"></script>-->
 
 <body class="authority_0" ng-app="ordersDetail" ng-controller="ordersDetailCtrl">
 
@@ -189,82 +189,51 @@ $(function () {
 <!--▲お客様情報ここまで--><!--▼受注商品情報ここから--><a name="order_products"></a>
 
 <h2 id="order_products" style="font-size: 18px">受注商品情報</h2>
-    <a class="btn-normal" href="javascript:;" name="recalculate"
-       onclick="fnModeSubmit('recalculate','anchor_key','order_products');">計算結果の確認</a>
     <a class="btn-normal" href="javascript:;" name="add_product"
        onclick="win03('/admin/orders/new', 'search', '615', '500'); return false;">商品の追加</a>
 <br><br>
 
-
-<table class="list" id="order-edit-products">
+<div class="form-group">
+<!--<div class="row">-->
+<!--<div class="col-log-10">-->
+<table class="table-condensed" style="width:720px; font-size: 14px">
     <tr>
-        <th class="id">商品コード</th>
-        <th class="name">商品名</th>
-        <th class="price">単価</th>
-        <th class="qty">数量</th>
-        <th class="price">税込み価格</th>
-        <th class="price">小計</th>
+        <th style="text-align: center">商品コード</th>
+        <th style="text-align: center">商品名</th>
+        <th style="text-align: center">単価</th>
+        <th style="text-align: center">数量</th>
+        <th style="text-align: center">消費税</th>
+        <th style="text-align: center">小計</th>
     </tr>
-    <form name="form1">
     <tr ng-repeat="product in products">
-        <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
-        <!--<td><input type="text" style="float: right;" value="{{product.price}}" ng-model="price"></td>-->
-        <td><input type="text" style="float: right;" ng-model="test"></td>
-        <td><input type="text" value="{{product.quantity}}"></td>
-        <td>{{product.tax}}</td>
-        <td>{{test}}</td>
-        <!--<td ng-bind="{{(product.price+product.tax)*product.quantity}}"></td>-->
+        <td style="font-size: 14px">{{product.id}}</td>
+        <td style="font-size: 14px">{{product.name}}</td>
+        <td class="col-lg-2"><input type="text" class="form-control" style="text-align: right;" ng-model="product.price"></td>
+        <td><input type="text"  class="form-control" style="text-align: right;" ng-model="product.qty"></td>
+        <td style="text-align: right; font-size: 14px">{{product.tax()|number}}</td>
+        <td style="text-align: right; font-size: 14px">{{product.subtotal()|number}}円</td>
     </tr>
-    </form>
     <tr>
         <th colspan="5" class="column right">小計</th>
-        <td class="right">円</td>
+        <td class="right" style="text-align: right; font-size: 14px">{{sumtotal|number}}円</td>
     </tr>
     <tr>
         <th colspan="5" class="column right">値引き</th>
         <td class="right">
             <span class="attention"></span>
-            <input type="text" name="discount" value="0" maxlength="9" style="" size="5" class="box6">円
-        </td>
-    </tr>
-    <tr>
-        <th colspan="5" class="column right">送料</th>
-        <td class="right">
-            <span class="attention"></span>
-            <input type="text" name="deliv_fee" value="0" maxlength="9" style="" size="5" class="box6">円
-        </td>
-    </tr>
-    <tr>
-        <th colspan="5" class="column right">手数料</th>
-        <td class="right">
-            <span class="attention"></span>
-            <input type="text" name="charge" value="0" maxlength="9" style="" size="5" class="box6">円
+            <input type="text" maxlength="9" class="form-control"
+                   style="font-size: 14px; width: 80%; display: inline; text-align: right" ng-model="discount">円
         </td>
     </tr>
     <tr>
         <th colspan="5" class="column right">合計</th>
-        <td class="right"><span class="attention"></span>円</td>
-    </tr>
-    <tr>
-        <th colspan="5" class="column right">お支払い合計</th>
-        <td class="right">
-            <span class="attention"></span>円
-        </td>
-    </tr>
-    <tr>
-        <th colspan="5" class="column right">使用ポイント</th>
-        <td class="right">
-            <span class="attention"></span>
-            <input type="text" name="use_point" value="0" maxlength="9" style="" size="5" class="box6">pt
-        </td>
-    </tr>
-    <tr>
-        <th colspan="5" class="column right">加算ポイント</th>
-        <td class="right">0pt</td>
+        <td class="right" style="font-size: 14px;"><span class="attention"></span>{{grandtotal()|number}}円</td>
     </tr>
 </table>
-<input type="hidden" name="shipping_quantity" value="1"><!--▼お届け先情報ここから--><a name="shipping"></a>
+<!--</div>-->
+<!--</div>-->
+</div>
+<!--<input type="hidden" name="shipping_quantity" value="1">--><!--▼お届け先情報ここから--><!--<a name="shipping"></a>-->
 
 <h2 style="font-size: 18px">お届け先情報</h2>
     <a class="btn-normal" href="http://demo.ec-cube.netjavascript:;" onclick="fnCopyFromOrderData();">お客様情報へお届けする</a>
